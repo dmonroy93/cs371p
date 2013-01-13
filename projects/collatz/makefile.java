@@ -18,4 +18,4 @@ test: TestCollatz.class
 clean:
 	rm -f RunCollatz.class
 	rm -f RunCollatz.tmp
-    rm -f TestCollatz.class
+	rm -f TestCollatz.class
