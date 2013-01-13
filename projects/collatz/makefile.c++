@@ -12,11 +12,6 @@ diff: RunCollatz
 	diff RunCollatz.out RunCollatz.tmp
 	rm RunCollatz.tmp
 
-diffv: RunCollatz
-	valgrind RunCollatz < RunCollatz.in > RunCollatz.tmp
-	diff RunCollatz.out RunCollatz.tmp
-	rm RunCollatz.tmp
-
 TestCollatz: Collatz.h Collatz.c++ TestCollatz.c++
 	g++ -lcppunit -ldl -pedantic -std=c++0x -Wall Collatz.c++ TestCollatz.c++ -o TestCollatz
 
@@ -28,5 +23,5 @@ testv: TestCollatz
 
 clean:
 	rm -f RunCollatz
-	rm -f RunCollatz.tmp
 	rm -f TestCollatz
+	rm -f *.tmp
