@@ -1,11 +1,6 @@
-RunCollatz: Collatz.h Collatz.c++ RunCollatz.c++
-	g++ -pedantic -std=c++0x -Wall Collatz.c++ RunCollatz.c++ -o RunCollatz
-
-run: RunCollatz
-	RunCollatz < RunCollatz.in
-
-runv: RunCollatz
-	valgrind RunCollatz < RunCollatz.in
+all:
+	make run
+	make test
 
 diff: RunCollatz
 	RunCollatz < RunCollatz.in > RunCollatz.tmp
@@ -17,6 +12,15 @@ doc:
 
 log:
 	git log > Collatz.log
+
+RunCollatz: Collatz.h Collatz.c++ RunCollatz.c++
+	g++ -pedantic -std=c++0x -Wall Collatz.c++ RunCollatz.c++ -o RunCollatz
+
+run: RunCollatz
+	RunCollatz < RunCollatz.in
+
+runv: RunCollatz
+	valgrind RunCollatz < RunCollatz.in
 
 TestCollatz: Collatz.h Collatz.c++ TestCollatz.c++
 	g++ -lcppunit -ldl -pedantic -std=c++0x -Wall Collatz.c++ TestCollatz.c++ -o TestCollatz
