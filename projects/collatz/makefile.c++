@@ -21,6 +21,15 @@ test: TestCollatz
 testv: TestCollatz
 	valgrind TestCollatz
 
+turnin-list:
+	turnin --list reza cs371ppj1
+
+turnin-submit:
+	turnin --submit reza cs371ppj1 Collatz.zip
+
+turnin-verify:
+	turnin --verify reza cs371ppj1
+
 zip:
 	zip -r Collatz.zip html/ makefile Collatz.c++ Collatz.h Collatz.log \
 	RunCollatz.c++ RunCollatz.in RunCollatz.out SphereCollatz.c++ \
