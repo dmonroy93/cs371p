@@ -12,6 +12,12 @@ diff: RunCollatz
 	diff RunCollatz.out RunCollatz.tmp
 	rm RunCollatz.tmp
 
+doc:
+	doxygen Doxyfile
+
+log:
+	git log > Collatz.log
+
 TestCollatz: Collatz.h Collatz.c++ TestCollatz.c++
 	g++ -lcppunit -ldl -pedantic -std=c++0x -Wall Collatz.c++ TestCollatz.c++ -o TestCollatz
 
