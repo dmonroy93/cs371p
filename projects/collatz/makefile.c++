@@ -23,7 +23,7 @@ runv: RunCollatz
 	valgrind RunCollatz < RunCollatz.in
 
 TestCollatz: Collatz.h Collatz.c++ TestCollatz.c++
-	g++ -lcppunit -ldl -pedantic -std=c++0x -Wall Collatz.c++ TestCollatz.c++ -o TestCollatz
+	g++ -pedantic -std=c++0x -Wall Collatz.c++ TestCollatz.c++ -o TestCollatz -lcppunit -ldl
 
 test: TestCollatz
 	TestCollatz
