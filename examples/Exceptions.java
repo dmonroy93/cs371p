@@ -29,7 +29,7 @@ final class Exceptions {
         assert IllegalAccessException.class.getSuperclass() == Exception.class;
         assert              Exception.class.getSuperclass() == Throwable.class;
         assert              Throwable.class.getSuperclass() ==    Object.class;
-        assert                 Object.class.getSuperclass() ==    null;
+        assert                 Object.class.getSuperclass() == null;
 
         Exception x = new IllegalAccessException();
         Throwable y = x;
