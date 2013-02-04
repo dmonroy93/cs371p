@@ -32,6 +32,6 @@ final class Assertions {
 /*
 Assertions.java
 Exception in thread "main" java.lang.AssertionError
-	at Assertions.cycle_length(Assertions.java:21)
-	at Assertions.main(Assertions.java:27)
+    at Assertions.cycle_length(Assertions.java:21)
+    at Assertions.main(Assertions.java:27)
 */

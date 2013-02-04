@@ -11,15 +11,15 @@ int main () {
 
     {
     int i = 2;
-    int j = -i;                      // negation
+    int j = -i;      // negation
     assert(i ==  2);
     assert(j == -2);
-//  ++-i;                            // error: lvalue required as increment operand
+//  ++-i;            // error: lvalue required as increment operand
     }
 
     {
     int i = 2;
-    int j = ++i;                     // pre-increment
+    int j = ++i;    // pre-increment
     assert(i == 3);
     assert(j == 3);
     ++++i;
@@ -30,11 +30,11 @@ int main () {
 
     {
     int i = 2;
-    int j = i++;                     // post-increment
+    int j = i++;    // post-increment
     assert(i == 3);
     assert(j == 2);
-//  i++++;                           // error: lvalue required as increment operand
-//  ++(i++);                         // error: lvalue required as increment operand
+//  i++++;          // error: lvalue required as increment operand
+//  ++(i++);        // error: lvalue required as increment operand
     }
 
     {
@@ -51,11 +51,11 @@ int main () {
     {
     int i = 2;
     int j = 3;
-    int k = i + j;                   // addition
+    int k = i + j;  // addition
     assert(i == 2);
     assert(j == 3);
     assert(k == 5);
-//  ++(i + j);                       // error: lvalue required as increment operand
+//  ++(i + j);      // error: lvalue required as increment operand
     }
 
     {
@@ -72,11 +72,11 @@ int main () {
     {
     int i = 12;
     int j = 10;
-    int k = i / j;                   // integer division
+    int k = i / j;   // integer division
     assert(i == 12);
     assert(j == 10);
     assert(k ==  1);
-//  ++(i / j);                       // error: lvalue required as increment operand
+//  ++(i / j);       // error: lvalue required as increment operand
     }
 
     {
@@ -93,11 +93,11 @@ int main () {
     {
     int i = 12;
     int j = 10;
-    int k = i % j;                   // integer mod
+    int k = i % j;   // integer mod
     assert(i == 12);
     assert(j == 10);
     assert(k ==  2);
-//  ++(i % j);                       // error: lvalue required as increment operand
+//  ++(i % j);       // error: lvalue required as increment operand
     }
 
     {
@@ -114,11 +114,11 @@ int main () {
     {
     int i = 2;
     int j = 3;
-    int k = i << j;                  // bit shift left
+    int k = i << j;  // bit shift left
     assert(i == 2);
     assert(j == 3);
     assert(k == 16);
-//  ++(i << j);                      // error: lvalue required as increment operand
+//  ++(i << j);      // error: lvalue required as increment operand
     }
 
     {
@@ -133,23 +133,23 @@ int main () {
     }
 
     {
-    int i = 10;                      // 0000 0000 0000 1010
-    int j = ~i;                      // 1111 1111 1111 0101: bit complement
-    int k = ~i + 1;                  // 1111 1111 1111 0110
+    int i = 10;       // 0000 0000 0000 1010
+    int j = ~i;       // 1111 1111 1111 0101: bit complement
+    int k = ~i + 1;   // 1111 1111 1111 0110
     assert(i ==  10);
     assert(j == -11);
     assert(k == -10);
-//  ++~i;                            // error: lvalue required as increment operand
+//  ++~i;             // error: lvalue required as increment operand
     }
 
     {
-    int i = 10;                      // 1010
-    int j = 12;                      // 1100
-    int k = i & j;                   // 1000: bit and
+    int i = 10;      // 1010
+    int j = 12;      // 1100
+    int k = i & j;   // 1000: bit and
     assert(i == 10);
     assert(j == 12);
     assert(k ==  8);
-//  ++(i & j);                       // error: lvalue required as increment operand
+//  ++(i & j);       // error: lvalue required as increment operand
     }
 
     {
@@ -164,13 +164,13 @@ int main () {
     }
 
     {
-    int i = 10;                      // 1010
-    int j = 12;                      // 1100
-    int k = i | j;                   // 1110: bit or
+    int i = 10;      // 1010
+    int j = 12;      // 1100
+    int k = i | j;   // 1110: bit or
     assert(i == 10);
     assert(j == 12);
     assert(k == 14);
-//  ++(i | j);                       // error: lvalue required as increment operand
+//  ++(i | j);       // error: lvalue required as increment operand
     }
 
     {
@@ -185,13 +185,13 @@ int main () {
     }
 
     {
-    int i = 10;                      // 1010
-    int j = 12;                      // 1100
-    int k = i ^ j;                   // 0110: bit exclusive or
+    int i = 10;      // 1010
+    int j = 12;      // 1100
+    int k = i ^ j;   // 0110: bit exclusive or
     assert(i == 10);
     assert(j == 12);
     assert(k ==  6);
-//  ++(i ^ j);                       // error: lvalue required as increment operand
+//  ++(i ^ j);       // error: lvalue required as increment operand
     }
 
     {
@@ -206,17 +206,17 @@ int main () {
     }
 
     {
-    int i = 10;                      // 1010
-    int j = 12;                      // 1100
+    int i = 10;      // 1010
+    int j = 12;      // 1100
     i ^= j;
-    assert(i ==  6);                 // 0110
-    assert(j == 12);                 // 1100
+    assert(i ==  6); // 0110
+    assert(j == 12); // 1100
     j ^= i;
-    assert(i ==  6);                 // 0110
-    assert(j == 10);                 // 1010
+    assert(i ==  6); // 0110
+    assert(j == 10); // 1010
     i ^= j;
-    assert(i == 12);                 // 1100
-    assert(j == 10);                 // 1010
+    assert(i == 12); // 1100
+    assert(j == 10); // 1010
     }
 
     {
