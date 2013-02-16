@@ -181,6 +181,11 @@ final class Arrays {
             assert false;}
         catch (ArrayStoreException e)
             {}
+        try {
+            x.add("uvw");
+            assert false;}
+        catch (UnsupportedOperationException e)
+            {}
         final Object[] b = x.toArray();
         assert b.length == 3;
         assert b[1] == "xyz";
